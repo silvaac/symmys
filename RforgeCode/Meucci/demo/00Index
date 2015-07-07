@@ -1,0 +1,108 @@
+AnalyticalvsNumerical       		 compares the numerical and the analytical solution of entropy-pooling
+ButterflyTrading            		 performs the butterfly-trading case study for the Entropy-Pooling approach by Attilio Meucci
+DetectOutliersviaMVE        		 detects outliers in two-asset and multi-asset case
+FullyFlexibleBayesNets      		 uses Entropy Pooling to compute Fully Flexible Bayesian networks for risk management
+FullFlexProbs						 uses Entropy Pooling to compute Fully Flexible Probabilities for historical scenarios
+FullyIntegratedLiquidityAndMarketRisk	 computes the liquidity-risk and funding-risk adjusted P&L distribution
+HermiteGrid_CaseStudy       		 estimates the prior of a hedge fund return and processes extreme views on CVaR according to Entropy Pooling
+HermiteGrid_CVaR_Recursion  		 illustrates the discrete Newton recursion  to process views on CVaR according to Entropy Pooling
+HermiteGrid_demo            		 compares the performance of plain Monte Carlo versus grid in applying Entropy Pooling to process extreme views
+InvariantProjection         		 projects summary statistics to arbitrary horizons under i.i.d. assumption
+MeanDiversificationFrontier  computes the mean-diversification efficient frontier
+Prior2Posterior             		 compares the numerical and the analytical solution of entropy-pooling
+RankingInformation          		 performs ranking allocation using the Entropy-Pooling approach by Attilio Meucci
+RobustBayesianAllocation    		 replicates the example from Meucci's MATLAB script S_SimulationsCaseStudy.M             
+S_AnalyzeLognormalCorrelation		 considers a bivariate lognormal market and display the correlation and the condition number of the covariance matrix
+S_AnalyzeNormalCorrelation      	 considers a bivariate normal market and display the correlation and the condition number of the covariance matrix    
+S_AnalyzeNormalInverseWishart   	 familiarizes the users with multivariate Bayesian estimation.   
+S_AutocorrelatedProcess				 simulates a Ornstein-Uhlenbeck AR(1) process
+S_BivariateSample               	 generates draws from a bivariate distribution with different marginals    
+S_BlackLittermanBasic           	 describes to basic market-based Black-Litterman approach    
+S_BondProjectionPricingNormal   	 projects the distribution of the market invariants for the bond markets from the estimation interval to the investment horizon   
+S_BondProjectionPricingStudentT 	 projects the distribution of the market invariants for the bond markets from the estimation interval to the investment horizon (Student's T assumption)
+S_BuyNHold                    		 illustrates the buy & hold dynamic strategy     
+S_CPPI                        		 illustrates the CPPI (constant proportion portfolio insurance) dynamic strategy     
+S_CallsProjectionPricing      		 projects the distribution of the market invariants for the derivatives market and computes the distribution of prices at the investment horizon  
+S_CheckDiagonalization      		 verifies the correctness of the eigenvalue-eigenvector representation in terms of real matrices for the transition matrix of an OU process 
+S_CornishFisher              		 compares the Cornish-Fisher estimate of the VaR with the true analytical VaR under the lognormal assumptions       
+S_CorrelationPriorUniform    		 shows how a jointly uniform prior on the correlations implies that the marginal distribution of each correlation is peaked around zero       
+S_CovarianceEvolution       		 represents the evolution of the covariance of an OU process in terms of the dispersion ellipsoid   
+S_CrossSectionConstrainedIndustries  fits a cross-sectional linear factor model creating industry factors, where the industry factors are constrained to be uncorrelated with the market
+S_CrossSectionIndustries 			 fits a cross-sectional linear factor model creating industry factors           
+S_DerivativesInvariants      		 performs the quest for invariance in the derivatives market       
+S_DeterministicEvolution   			 animates the evolution of the determinstic component of an OU process
+S_DisplayLognormalCopulaPdf          displays the pdf of the copula of a lognormal distribution 
+S_DisplayNormalCopulaCdf             displays the cdf of the copula of a normal distribution
+S_DisplayNormalCopulaPdf             displays the pdf of the copula of a normal distribution
+S_DisplayStudentTCopulaPdf           displays the pdf of the copula of a Student t distribution
+S_ESContributionFactors              computes the expected shortfall and the contributions to ES from each factor in simulations 	
+S_ESContributionsStudentT         	 computes the expected shortfall and the contributions to ES from each security  
+S_EigenvalueDispersion               displays the sample eigenvalues dispersion phenomenon
+S_EllipticalNDim                     decomposes the N-variate normal distribution into its radial and uniform components to generate an elliptical distribution
+S_EntropyView						 illustrates the Entropy Pooling approach
+S_EquitiesInvariants                 performs the quest for invariance in the stock market
+S_EquityProjectionPricing            projects the distribution of the market invariants for the stock market from the estimation interval (normal assumption) to the investment horizon. Then it computes the distribution of prices at the investment horizon analytically.
+S_EstimateExpectedValueEvaluation 	 script familiarizes the user with the evaluation of an estimator replicability, loss, error, bias and inefficiency 
+S_EstimateMomentsComboEvaluation     familiarizes the user with the evaluation of an estimator: replicability, loss, error, bias and inefficiency 
+S_EstimateQuantileEvaluation         familiarizes the user with the evaluation of an estimator: replicability, loss, error, bias and inefficiency 
+S_Estimator                          familiarizes the user with the evaluation of an estimator: replicability, loss, error, bias and inefficiency 
+S_EvaluationGeneric                  determines the optimal allocation
+S_ExactMeanAndCovariance             generate draws from a multivariate normal with matching mean and covariance
+S_ExpectationMaximizationHighYield   implements the Expectation-Maximization (EM) algoritm, which estimates the parameters of a multivariate normal distribution when some observations are randomly missing
+S_ExtremeValueTheory                 computes the quantile (VaR) analytically, in simulations and using the extreme value theory approximation
+S_FactorAnalysisNotOk                illustrates the hidden factor analysis puzzle
+S_FactorResidualCorrelation          illustrates exogenous loadings and endogenous factors the true analytical VaR under the lognormal assumptions from the estimation interval to the investment horizon
+S_FitProjectRates           		 fits the swap rates dynamics to a multivariate Ornstein-Uhlenbeck process and computes and plots the estimated future distribution
+S_FitSwapToStudentT                  demonstrates the recursive ML estimation of the location and scatter parameters of a multivariate Student t distribution
+S_FixedIncomeInvariants              performs the quest for invariance in the fixed income market
+S_FullCodependence                   illustrates the concept of co-dependence
+S_FxCopulaMarginal                   displays the empirical copula of a set of market variables
+S_GenerateMixtureSample              generates draws from a univarite mixture
+S_HedgeOptions                       compares hedging based on Black-Scholes deltas with Factors on Demand hedging
+S_HorizonEffect                      studies horizon effect on explicit factors / implicit loadings linear model
+S_InvestorsObjective                 familiarizes the users with the objectives of different investors in a highly non-normal bi-variate  market of securities
+S_JumpDiffusionMerton                simulates a jump-diffusion process
+S_LinVsLogReturn                     project a distribution in the future according to the i.i.d.-implied square-root rule
+S_LognormalSample                    simulate univariate lognormal variables
+S_MarkovChainMonteCarlo              illustrates the Metropolis-Hastings algorithm
+S_MaxMinVariance                     dispays location-dispersion ellipsoid and statistic
+S_MaximumLikelihood                  performs ML under a non-standard parametric set of distributions
+S_MeanVarianceBenchmark              projects the distribution of the market invariants for the bond and stock markets from the estimation interval to the investment horizon. Then it computes the distribution of prices at the investment horizon and translates this distribution into the returns distribution
+S_MeanVarianceCalls                  computes the mean-variance frontier of a set of options
+S_MeanVarianceHorizon                projects the distribution of the market invariants for the bond and stock markets from the estimation interval to the investment horizon. Then it computes the distribution of prices at the investment horizon and performs the two-step mean-variance optimization in terms of returns and relative portfolio weights.
+S_MeanVarianceOptimization           projects the distribution of the market invariants for the bond and stock markets from the estimation interval to the investment horizon. Then it computes the distribution of prices at the investment horizon and performs the two-step mean-variance optimization.
+S_MultiVarSqrRootRule                illustrates the multivariate square root rule-of-thumb
+S_NonAnalytical                      generates draws for the sum of random variable
+S_NormalSample                       simulate univariate normal variables
+S_OrderStatisticsPdfLognormal        script shows that the pdf of the r-th order statistics of a lognormal random variable
+S_OrderStatisticsPdfStudentT         script shows that the pdf of the r-th order statistics of a tudent t random variable
+S_PasturMarchenko                    illustrate the Marchenko-Pastur limit of runifom matrix theory
+S_ProjectNPriceMvGarch               fits a multivariate GARCH model and projects the distribution of the compounded returns from the estimation interval to the investment horizon. Then it computes the distribution of prices at the investment horizon. 
+S_ProjectSummaryStatistics           projects summary statistics to arbitrary horizons
+S_PureResidualBonds                  models the joint distribution of the yet-to-be realized key rates of the government curve
+S_ResidualAnalysisTheory             performs the analysis of residuals
+S_SelectionHeuristics                computes the r-square of selected factors
+S_SemiCircular                       illustrate the semi-circular law of random matrix theory
+S_ShrinkageEstimators 				 computes the multivariate shrinkage estimators of location and scatter under the normal assumption
+S_SnPCaseStudy              		 replicates the example from Meucci's MATLAB scriptS_SnPCaseStudy.M
+S_StatArbSwaps                       search for cointegrated stat-arb strategies among swap contracts
+S_StudentTSample                     simulate univariate Student-t variables
+S_SwapPca2Dim                        performs the principal component analysis of a simplified two-point swap curve
+S_TStatApprox                        simulates invariants for the regression model
+S_TimeSeriesConstrainedIndustries    fits a time-series linear factor computing the industry factors loadings,  where the loadings are bounded and constrained to yield unit exposure
+S_TimeSeriesIndustries               fits a time-series linear factor computing the industry factors loadings
+S_TimeSeriesVsCrossSectionIndustries  computes the correlation between explicit, time-series industry factor returns and implicit, cross-section industry factor returns
+S_Toeplitz                           shows that the eigenvectors of a Toeplitz matrix have a Fourier basis structure under t-distribution assumptions
+S_UtilityMax                         illustrates the constant weight dynamic strategy that maximizes power utility
+S_VaRContributionsUniform            computes the VaR and the contributions to VaR from each security anallitically and in simulations
+S_VolatilityClustering               generates paths for a volatility clustering
+S_Wishart                            generates a sample from the 2x2 Wishart distribution
+S_WishartCorrelation                 computes the correlation of the first diagonal and off-diagonal elements of a 2x2 Wishart distribution as a function of the inputs
+S_WishartLocationDispersion   		 computes the location-dispersion ellipsoid of the normalized first diagonal and off-diagonal elements of a 2x2 Wishart distribution as a function of the inputs
+S_ToyExample               			 illustrates the use of Entropy Pooling to compute Fully Flexible Probabilities
+logToArithmeticCovariance   		 generates arithmetric returns and arithmetric covariance matrix given a distribution of log returns
+S_plotGaussHermite          		 displays mesh points based on Gaussian-Hermite quadrature Bayesian networks
+S_AnalyzeJGBrates					 applies the Inverse Call Transformation to Japanese government rates and compares the shadow rates returned.
+S_MainDiversification				 computes Diversification Distribution and the Effective Number of Bets.
+
+
