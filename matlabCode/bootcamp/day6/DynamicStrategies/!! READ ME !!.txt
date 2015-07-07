@@ -1,0 +1,12 @@
+These files complement the article	
+	Meucci, A. (2010) "Review of Dynamic Allocation Strategies - Convex versus Concave Management"
+	available at http://ssrn.com/abstract=1635982
+
+
+
+The most recent version of this code is available at MATLAB Central - File Exchange
+
+
+No claim of accuracy is made and no responsibility is taken for possible errors. 
+These files can and must be used and distributed freely. Please quote the author.
+	!!! Feedback is highly appreciated !!!
