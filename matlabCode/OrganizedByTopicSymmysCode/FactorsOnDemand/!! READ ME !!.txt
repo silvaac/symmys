@@ -1,0 +1,20 @@
+These files complement the article	
+	Meucci, A. (2010) "Factors on Demand", Risk, 23, 7, p. 84-89
+	available at http://ssrn.com/abstract=1565134
+
+The most recent version of this code is available at MATLAB Central - File Exchange
+
+- In the folder "StatisticalVsCrossSectional" run the script "S_Main" 
+ This case study, detailed in the above article, uses a random matrix theory factor model 
+ for estimation and a cross-sectional factor model for attribution
+- In the folder "NoGreekHedging" run the script "S_Main" 
+ This case study, detailed in the above article, compares hedging based 
+ on Black-Scholes deltas with Factors on Demand hedging 
+- In the folder "SelectionHeuristics" run the script "S_Main" 
+ This case study, detailed in the above article, runs different heuristics to 
+ select the best K attribution factors out of a pool of N>K factors
+
+
+No claim of accuracy is made and no responsibility is taken for possible errors. 
+These files can and must be used and distributed freely. Please quote the author.
+	!!! Feedback is highly appreciated !!!
