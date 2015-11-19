@@ -1,0 +1,120 @@
+---
+title: "Simple 2D optimization"
+author: "csilva"
+date: "11/19/2015"
+output: html_document
+---
+
+Simple test of optimization.... stocks...
+At the horizon of 1 year the invariant (log-return) is distributed with V and Mu. This is the investment horizon, therefore I ignore the estimation and projection step.
+
+```{r,echo=FALSE}
+require(MASS)
+Cm    = matrix(c(1,0.0,0.0,1),2,2)
+Sigma = c(0.1,0.1)
+V = Cm*Sigma*rep(Sigma,each=nrow(Cm)) # cov2cor
+Mu= c(0,0)
+R = mvrnorm(n=50000,Mu,V)
+P0 = 100 # both stocks with same initial price
+P  = P0*exp(R)
+#P[,1] = P0
+```
+
+Is the variance matrix positive definite?
+
+```{r, echo=FALSE}
+e = eigen(V)
+print(e)
+```
+
+Assume that we a buget constraint $w'1 = 1$, therefore since we have a  2 D market we can describe everything with regard to 1 weight.
+
+```{r,echo=FALSE}
+AUM_i = 1e6
+
+w  = seq(0,1,by = 0.01)
+N1 = w*AUM_i/P0  # number of shares
+N2 = (1-w)*AUM_i/P0
+N = cbind(N1,N2)
+# Next calculate the final AUM for each state in nature
+# Down the rows we have final AUM for different nature state
+# The col are for different w. First col is for 1,0 .... all the way to 0,1
+AUM_f = apply(N,1,function(z,P){rowSums(sweep(x = P,MARGIN = 2,STATS = z,FUN = "*"))},P=P)
+```
+
+Now we need to measure the satisfaction with different senarios. We have to choose the index of satisfaction. Let's try the utility function and certanty equivalent. Do $E[U(\phi_{\alpha})]$
+```{r,echo=FALSE}
+U1  = log(AUM_f)
+Eu1 = colMeans(U1) # average over all the possible universes... so E[U(phi_{alpha})]
+CE1 = exp(Eu1) # in units of $
+gamma = AUM_i# risk aversion in $
+U2 = -1*exp(-AUM_f/gamma)
+Eu2 = colMeans(U2)
+CE2 = -1*gamma*log(-1*Eu2)
+mx1 = which.max(CE1)
+plot(w,CE1,main = paste("Log utility CE vs weight of first asset",w[mx1]))
+abline(v = w[mx1])
+mx2 = which.max(CE2)
+plot(w,CE2,main = paste("Log utility CE vs weight of first asset",w[mx2]))
+abline(v = w[mx2])
+```
+Compare with approximation in book (5.146)
+
+```{r,echo=FALSE}
+Ephi = colMeans(AUM_f)
+Vphi = apply(AUM_f,2,var)
+Alog = 1/Ephi
+Aexp = 1/gamma
+appCe1 = Ephi-(Alog/2)*Vphi 
+appCe2 = Ephi-(Aexp/2)*Vphi
+mx1 = which.max(appCe1)
+plot(w,appCe1,main = paste("Log utility CE vs weight of first asset",w[mx1]))
+abline(v = w[mx1])
+mx2 = which.max(appCe2)
+plot(w,appCe2,main = paste("Log utility CE vs weight of first asset",w[mx2]))
+abline(v = w[mx2])
+
+```
+
+How good is the log(1+x) approximation?
+
+```{r,echo=FALSE}
+x = seq(-5,5,0.01)
+y = log(1+x)
+z = x-0.5*x^2
+plot(x,y,xlim = c(-0.5,0.5));lines(x,z,col="red")
+plot(x,(y-z)/z,xlim=c(-0.5,0.5),ylim=c(-0.5,0.5))
+```
+
+Exactly like my simple computations... 1D by construction. Second asset is cash at zero IR. Therefore it is a 1 D problem
+
+```{r,echo=FALSE}
+# Log normal?
+Mu1d = 0
+Sig1d = 5
+rg = rnorm(n = 50000,mean = Mu1d,sd = Sig1d)
+s  = exp(rg)  # Indeed log normal: this is the distribution of P(t)/P(0) 
+#s1 = rlnorm(n=10000,meanlog = 0,sdlog = 0.1)
+L = as.matrix(s-1)  # Linear returns
+wL = apply(as.matrix(w),1,function(z,L){rowSums(sweep(x = L,MARGIN = 2,STATS = z,FUN = "*"))},L=L)
+U1d = log(1+wL)
+EU1d = colMeans(U1d)
+mx1 = which.max(EU1d)
+EU1dApp = colMeans(wL)-colMeans(wL*wL)/2
+EU1dApp2 = colMeans(wL)-colMeans(wL*wL)/2 + colMeans(wL*wL*wL)/3
+wOpt = round(mean(L)/mean(L^2),2)
+plot(w,EU1d,main=paste("BestSim=",w[mx1],"BestApp=",wOpt,"SD(wL)=",round(sd(wL),1)));lines(w,EU1dApp,col="red")
+lines(w,EU1dApp2,col="blue")
+abline(v = wOpt,col="red")
+abline(v = w[mx1])
+sig2 = Sig1d^2;
+thMu = exp(Mu1d+sig2/2)-1
+thSig= exp(Mu1d+sig2/2)*sqrt(exp(sig2)-1)
+thS2 =(thSig^2)+((thMu+1)^2)
+thL2 = thS2-2*(thMu+1)+1  # GOOD thMu/thL2 is the approx alloc
+xf = seq(0,5,0.01)
+f = dlnorm(xf,meanlog = 0,sdlog = 5)
+plot(xf-1,f);lines(xf[-1]-1,log(xf[-1]))
+```
+
+
