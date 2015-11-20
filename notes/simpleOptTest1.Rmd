@@ -117,4 +117,33 @@ f = dlnorm(xf,meanlog = 0,sdlog = 5)
 plot(xf-1,f);lines(xf[-1]-1,log(xf[-1]))
 ```
 
+Simple computation but doing the numerical integration of $E[\log(1+wL)]$ to check results... Indeed the max is at 0.5 for large sigma! Remember that a log normal with $\mu=0$ has a positive expected value... therefore the log utility would invest no matter how large the std because of a small positive drift. Probably the fact that at infitinty you will make money...
+
+```{r}
+
+logNL <- function(x,mu,sigma){
+  y = 1+x
+  a = 1/(y)
+  b = (log(y)-mu)^2
+  cnst = sqrt(2*pi)*sigma
+  return(exp(-b/(2*sigma*sigma))/(y*cnst))
+}
+
+mu = 0
+sig = 0.9
+dx = 0.01
+xMax = 5000
+x = seq(-0.999,xMax,dx)
+#plot(x,logNL(x,mu,sig));lines(x,dlnorm(x+1,meanlog = mu,sdlog = sig))
+iTest1 = sum(logNL(x,mu,sig)*dx)
+print(iTest1)
+iTest2 = sum(log(0.1*x+1)*logNL(x,mu,sig)*dx)
+print(iTest2)
+myInt = sapply(w,function(k){sum(log(k*x+1)*logNL(x,mu,sig)*dx)})
+plot(w,myInt)
+myInt2 = sapply(w,function(k){sum(-1*exp(-1*(k*x+1))*logNL(x,mu,sig)*dx)})
+plot(w,myInt2)
+```
+
+
 
