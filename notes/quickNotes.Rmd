@@ -1,0 +1,43 @@
+---
+title: "Quick Notes"
+author: "csilva"
+date: "12/04/2015"
+output: html_document
+---
+
+## Chapter 6
+
+Optimization given an index of satisfaction. Ignores
+estimation error. Parameters of the market are known without
+error. Text book approach.
+
+## Chapter 7 --  basically extention of chapter 4
+
+Assume that the parameters are in fact random. What
+is the posterior distribution of these parameters? This
+chapter extends chapter 4. Posterior of mean, variance and
+factors are calculated for given distributions (section up
+to 7.4). 
+Section 7.4 talks about finding the prior: idea is
+imply the prior from a "desired" allocation (like equally
+weighted) with constraints. Second way is to solve a log likelihood with
+constraints where the possible parameters are within a
+domain which agrees with the allocation constraints.
+
+## Chapter 8 -- Estimation risk
+
+## Chapter 9 -- extends chapter 6 w/ estimation risk
+	
+Optimization/allocation with estimation risk
+(discussed in chapter 7)
+	
+  9.1 Use posterior or classical-equivalent to
+optimize.Classical-equivalent is more general and also
+"easy", "just" replace the market parameters with the
+classical equivalent parameters.
+	9.2 Black-Litterman: book give first intro but
+subsequent papers extend BL and propose EP
+  9.3 Re-sampled allocation: averages the output of a set of optimization. It involves simulation and sequential optimization. It is different from the other (first step of selecting the estimators can be done by using simple sample estimators).
+  9.4 and 9.5 Robust allocation and its Bayesian extension. Basically select a domain of the parameter space minimize the max estimation risk on that space. The hope is that the true is going to be within the space ... practically it only numerically tractable for special examples. The Bayesian version uses the location-dispersion ellipsoid with classical-equivalent parameters to define the parameter domain.
+
+
