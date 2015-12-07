@@ -1,0 +1,33 @@
+---
+title: "quickCopula"
+author: "csilva"
+date: "12/07/2015"
+output: html_document
+---
+
+
+
+```{r}
+N = 1000
+mu = 9
+sigma= sqrt(2)
+mu1 = 0
+sigma1 = 0.04
+mu2 = mu/2
+sigma2 = sigma^2
+g = rgamma(n = N,scale = sigma2,shape = mu2)
+logN = rlnorm(n=N,meanlog = mu1,sdlog = sigma1)
+# Generate the grades .. gaussian copula
+require(MASS)
+r = -0.8
+sigmaC = matrix(c(1,r,r,1),2,2)
+cpla = mvrnorm(n = N,mu = rep(0,2),Sigma = sigmaC)
+U = pnorm(cpla) 
+# Get the correlated marginals
+g1 = qgamma(U[,1],shape = mu2,scale = sigma2)
+logN1 = qlnorm(U[,2],meanlog = mu1,sdlog = sigma1)
+require(mnormt)
+cpla2 = rmt(n=N,S = sigmaC)
+
+```
+
